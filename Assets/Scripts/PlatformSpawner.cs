@@ -34,6 +34,7 @@ public class PlatformSpawner : MonoBehaviour
         for (int i = 0; i < numberOfPlatformsToSpawn; i++)
         {
             GameObject platformSpawned = Instantiate(platformPrefab, currentPosition, Quaternion.identity);
+            platformSpawned.name = "cube" + i.ToString();
 
             int newX = Mathf.RoundToInt(Random.Range(-distanceBetween.x, distanceBetween.x));
             currentPosition = new Vector3(newX, 0f, platformSpawned.transform.position.z + distanceBetween.y);
